@@ -1,0 +1,63 @@
+.ide-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #0f0f1a;
+  overflow: hidden;
+}
+
+.ide-body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+}
+
+.ide-body > * {
+  height: 100%;
+  width: 100%;
+}
+
+.resize-handle {
+  width: 4px;
+  background: #2a2a3e;
+  cursor: col-resize;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.resize-handle:hover, .resize-handle[data-resize-handle-state="drag"] {
+  background: #7c3aed;
+}
+
+.preview-area {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.preview-area > *:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.ide-loading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #6b7280;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+}
+
+.ide-loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #2a2a3e;
+  border-top-color: #7c3aed;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
